@@ -12,7 +12,7 @@ var bot = new builder.BotConnectorBot(botConnectorOptions);
 bot.add('/', function (session) {
     
     //respond with user's message
-    session.send("You said " + session.message.text);
+    session.send("あなたは" + session.message.text + "と言いました。");
 });
 
 // Setup Restify Server
