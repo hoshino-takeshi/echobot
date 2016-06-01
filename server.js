@@ -17,6 +17,8 @@ var bot = new builder.BotConnectorBot(botConnectorOptions);
 //});
 
 bot.add('/', new builder.CommandDialog()
+    .onBegin(builder.DialogAction.send("こんにちは。PA Botです。情報が今どこに掲示されているのかを(分かる範囲で)お知らせします。"
+      + "キーワードを入れてください"))
     .matches('^version', builder.DialogAction.send('PA Bot version 0.1'))
     .matches('google', builder.DialogAction.send('http://www.google.com/'))
     .matches('MKI', builder.DialogAction.send('http://www.mki.co.jp/'))
