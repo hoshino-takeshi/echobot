@@ -13,7 +13,7 @@ bot.add('/', function (session) {
     
     //respond with user's message
     session.send("あなたは" + session.message.text + "と言いました。"
-     + "Googleへは http://www.google.com からアクセスできます。");
+     + "トップページへは https://mki365.sharepoint.com/sites/ba からアクセスできます。");
 });
 
 // Setup Restify Server
