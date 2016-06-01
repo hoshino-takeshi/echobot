@@ -13,8 +13,7 @@ bot.add('/', function (session) {
     
     //respond with user's message
     session.send("あなたは" + session.message.text + "と言いました。"
-     + "<br/>http://www.google.com"
-     + "<br/><a href='http://www.google.com'>googleへのリンク</a>");
+     + "Googleへは http://www.google.com からアクセスできます。");
 });
 
 // Setup Restify Server
