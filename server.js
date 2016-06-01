@@ -17,10 +17,10 @@ var bot = new builder.BotConnectorBot(botConnectorOptions);
 //});
 
 bot.add('/', new builder.CommandDialog()
-    .matches('^version', builder.DialogAction.send('PA Bot version 0.1')
-    .matches('google', builder.DialogAction.send('http://www.google.com/')
-    .matches('MKI', builder.DialogAction.send('http://www.mki.co.jp/')
-    .matches('プロダクトポータル', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/')
+    .matches('^version', builder.DialogAction.send('PA Bot version 0.1'))
+    .matches('google', builder.DialogAction.send('http://www.google.com/'))
+    .matches('MKI', builder.DialogAction.send('http://www.mki.co.jp/'))
+    .matches('プロダクトポータル', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/'))
     .onDefault(builder.DialogAction.send("認識できません。"))
 );
 
