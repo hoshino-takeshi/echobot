@@ -50,15 +50,19 @@ bot.dialog('/', intents);
 // インテントと処理の結びつけ
 intents
     .matches('メーカーページへ移動', function (session, args) {
+	 var resultText = "";
         // インテントが 'intentA' だったときの処理をここに記述します。
  	var area = builder.EntityRecognizer.findEntity(args.entities, 'メーカー名');
 	if (area) {
-		builder.DialogAction.send('Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx'));
+//		builder.DialogAction.send('Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx'));
+		resultText += 'Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx';
 	}
+	session.endDialog(resultText);
     })
     .onDefault(function(session){
         // 当てはまるインテントがなかったのとき(None) の処理をここに記述します。
-	builder.DialogAction.send('認識できませんでした。'))	
+//	builder.DialogAction.send('認識できませんでした。'))	
+	session.endDialog('認識できませんでした。');	
     });
 
 server.get(/.*/, restify.serveStatic({
