@@ -12,12 +12,12 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 });
 
 // ボットの接続先設定
-var connector = new builder.ChatConnector({
   // MicrosoftBotFramework公式サイトで取得した、IDとパスワードを入力します
-  appId: 'mkipp-echobotsample',
-  appPassword: '0c3e0d662858416aa0a1dccf30a9c9bc'
 //  appId: process.env.BOTFRAMEWORK_APPID, 
 //  appSecret: process.env.BOTFRAMEWORK_APPSECRET 
+var connector = new builder.ChatConnector({
+  appId: 'mkipp-echobotsample',
+  appPassword: '0c3e0d662858416aa0a1dccf30a9c9bc'
 });
 
 // ボットの仕組みを提供してくれるUniversalBotオブジェクトを作成
