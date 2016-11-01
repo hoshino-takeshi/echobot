@@ -58,7 +58,10 @@ intents
         // インテントが 'intentB' だったときの処理をここに記述します。
 
     })
-
+    .onDefault(function(session){
+        // 当てはまるインテントがなかったのとき(None) の処理をここに記述します。
+	builder.DialogAction.send('認識できませんでした。'))	
+    });
 //-------------------------------------------------------------------
 // Get secrets from server environment
 //var botConnectorOptions = { 
