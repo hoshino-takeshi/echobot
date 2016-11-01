@@ -25,6 +25,8 @@ bot.add('/', new builder.CommandDialog()
     .matches('プロダクトポータル', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/'))
     .matches('Cisco.*価格表', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/SitePages/Cisco価格表.aspx'))
     .matches('Cisco', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/SitePages/Cisco.aspx'))
+    .matches('(Microsoft|MS).*(社内利用|特典|デモ|検証|トレーニング)', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/SitePages/Microsoftパートナー特典(MPN).aspx'))
+    .matches('(Microsoft|MS)', builder.DialogAction.send('https://mki365.sharepoint.com/sites/ba/SitePages/Microsoft.aspx'))
     .onDefault(builder.DialogAction.send("認識できません。"))
 );
 
