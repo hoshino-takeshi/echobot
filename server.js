@@ -16,7 +16,7 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 //  appId: process.env.BOTFRAMEWORK_APPID, 
 //  appSecret: process.env.BOTFRAMEWORK_APPSECRET 
 //var connector = new builder.ChatConnector({
-var connector = new builder.BotConnectorBot({
+var connector = new builder.ChatConnector({
   appId: 'mkipp-echobotsample',
   appPassword: '0c3e0d662858416aa0a1dccf30a9c9bc'
 });
