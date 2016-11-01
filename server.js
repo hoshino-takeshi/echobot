@@ -21,7 +21,9 @@ var connector = new builder.ChatConnector({
 });
 
 // ボットの仕組みを提供してくれるUniversalBotオブジェクトを作成
-var bot = new builder.UniversalBot(connector);
+var bot = new builder.UniversalBot(connector, {
+    dialogErrorMessage: "すみません。認識できません。(T_T)"
+});
 
 // ***/api/messagesをエンドポイントとして、ボットをサーバで提供する
 server.post('/api/messages', connector.listen());
@@ -51,7 +53,9 @@ intents
     .matches('メーカーページへ移動', function (session, args) {
         // インテントが 'intentA' だったときの処理をここに記述します。
  	var area = builder.EntityRecognizer.findEntity(args.entities, 'メーカー名');
-	builder.DialogAction.send('Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx'))	
+	if (area) {
+		builder.DialogAction.send('Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx'));
+	}
     })
     .matches('intentB', function (session, args) {
 
@@ -62,6 +66,12 @@ intents
         // 当てはまるインテントがなかったのとき(None) の処理をここに記述します。
 	builder.DialogAction.send('認識できませんでした。'))	
     });
+
+server.get(/.*/, restify.serveStatic({
+    'directory': './static/',
+    'default': 'index.html'
+}));
+
 //-------------------------------------------------------------------
 // Get secrets from server environment
 //var botConnectorOptions = { 
