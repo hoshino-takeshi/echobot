@@ -40,7 +40,6 @@ var intents = new builder.IntentDialog({
   recognizers: [recognizer]
 });
 
-
 //=========================================================
 // 会話の処理
 //=========================================================
@@ -56,11 +55,6 @@ intents
 	if (area) {
 		builder.DialogAction.send('Ciscoのページはこちらです。https://mki365.sharepoint.com/sites/ba/SitePages/' + area + '.aspx'));
 	}
-    })
-    .matches('intentB', function (session, args) {
-
-        // インテントが 'intentB' だったときの処理をここに記述します。
-
     })
     .onDefault(function(session){
         // 当てはまるインテントがなかったのとき(None) の処理をここに記述します。
